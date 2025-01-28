@@ -1,0 +1,310 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f4f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease-in-out;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+/* Section styles */
+section {
+  background-color: #ffffff;
+  box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 650px;
+  position: relative;
+  overflow: hidden;
+  transform: scale(0.98);
+  transition: all 0.5s ease;
+}
+
+section:hover {
+  box-shadow: 0px 25px 60px rgba(0, 0, 0, 0.1);
+  transform: scale(1);
+}
+
+/* Input Fields */
+input, textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  font-size: 16px;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: #4CAF50;
+  outline: none;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+}
+
+button {
+  width: 100%;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+  transform: translateY(-4px);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+  transform: translateY(2px);
+}
+
+/* Google Button */
+.google-btn {
+  background-color: #4285F4;
+  color: white;
+  font-weight: normal;
+  border-radius: 10px;
+}
+
+.google-btn:hover {
+  background-color: #357ae8;
+}
+
+/* Dynamic List of Scraped Pages */
+#scraped-data {
+  margin-top: 30px;
+}
+
+#webpages-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+#webpages-list li {
+  background-color: #e7f7e7;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#webpages-list li:hover {
+  background-color: #d4f4d4;
+  transform: translateX(5px);
+}
+
+#webpages-list li.pending {
+  background-color: #f9f9f9;
+}
+
+#webpages-list li.scraped {
+  background-color: #d4edda;
+}
+
+/* Chatbot Integration & Testing Section */
+.chatbot-integration {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.chatbot-integration button {
+  width: 80%;
+  padding: 16px;
+  font-size: 16px;
+  border-radius: 8px;
+  background-color: #4CAF50;
+  color: white;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.chatbot-integration button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.chatbot-integration button:active {
+  transform: scale(0.98);
+}
+
+/* Success & Error Messages */
+#success-message, #error-message {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+#success-message {
+  color: #28a745;
+}
+
+#error-message {
+  color: #dc3545;
+}
+
+#success-message button, #error-message button {
+  margin-top: 15px;
+  background-color: #28a745;
+  border-radius: 8px;
+  padding: 12px 20px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#error-message button {
+  background-color: #dc3545;
+}
+
+#success-message button:hover, #error-message button:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Social Media Share Buttons */
+.social-btn {
+  margin: 12px 0;
+  padding: 12px 20px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.social-btn.facebook {
+  background-color: #3b5998;
+}
+
+.social-btn.facebook:hover {
+  background-color: #2d4373;
+  transform: scale(1.05);
+}
+
+.social-btn.twitter {
+  background-color: #1DA1F2;
+}
+
+.social-btn.twitter:hover {
+  background-color: #0d95e8;
+  transform: scale(1.05);
+}
+
+/* Loading Spinner */
+#loading-spinner {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -20px;
+  margin-top: -20px;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #4CAF50;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Floating Elements */
+.floating-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.floating-btn:hover {
+  background-color: #45a049;
+  transform: scale(1.1);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  body {
+    background-color: #e5e5e5;
+  }
+
+  section {
+    width: 100%;
+    padding: 25px;
+  }
+
+  input, textarea, button {
+    font-size: 14px;
+    padding: 14px;
+  }
+
+  .google-btn, .submit-btn, .social-btn {
+    width: 100%;
+  }
+
+  .floating-btn {
+    bottom: 20px;
+    right: 20px;
+    padding: 12px;
+  }
+
+  #success-message, #error-message {
+    font-size: 18px;
+  }
+
+  .social-btn {
+    margin: 5px 0;
+    width: 100%;
+  }
+}
